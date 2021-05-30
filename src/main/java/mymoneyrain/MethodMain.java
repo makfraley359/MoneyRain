@@ -1,6 +1,6 @@
 package mymoneyrain;
 
-public class MyFramework {
+public class MethodMain {
     public static void main(String[] args) {
 
     }
