@@ -1,0 +1,2 @@
+CREATE TABLE client (clientID varchar(50) PRIMARY KEY, firstName varchar(15) NOT NULL, secondName varchar(15) NOT NULL, lastName varchar(15) NOT NULL, gender varchar(6));
+CREATE TABLE account (accountID varchar(50) PRIMARY KEY,number varchar(50) NOT NULL,balance varchar(50) NOT NULL,clientID varchar(50) NOT NULL, FOREIGN KEY(clientID) REFERENCES client(clientID) ON DELETE CASCADE);

@@ -26,7 +26,10 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="ad0d7e04-83f4-4086-a144-f5af23494c42">
-        <schema name="mydbtest" object-types="table, view" />
+        <schema name="mydbtest" object-types="table, view, procedure, function" />
+      </connection>
+      <connection connection-id="7cabbbfd-4945-4d11-9f97-ad18f7335699">
+        <schema name="mydbtest" object-types="table, view, procedure, function" />
       </connection>
     </loaded-nodes>
   </component>
@@ -61,6 +64,9 @@
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/CreateTable.sql" connection-id="7cabbbfd-4945-4d11-9f97-ad18f7335699" session-id="MAIN" current-schema="mydbtest" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -172,7 +178,7 @@
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -181,8 +187,8 @@
           <port value="3306" />
           <database value="mysql" />
           <type value="USER_PASSWORD" />
-          <user value="" />
-          <deprecated-pwd value="" />
+          <user value="makfraley" />
+          <deprecated-pwd value="cmFyaTM1OTUxNzQ1dlY=" />
         </database>
         <properties>
           <auto-commit value="false" />
@@ -256,7 +262,7 @@
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -340,7 +346,7 @@
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
