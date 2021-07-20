@@ -2,14 +2,18 @@ package database;
 
 import models.Account;
 import models.Client;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import repository.AbstractRepository;
 import repository.AccountRepository;
 import repository.ClientRepository;
+import spring.SpringConfig;
 
 import java.io.IOException;
 import java.sql.*;
 
 public class TestConnection {
+
+    static AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
     public static final String USER_NAME = "root";
     public static final String PASSWORD =  "rari35951745vV";
@@ -36,8 +40,17 @@ public class TestConnection {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 
+
+/*        Client client = context.getBean("client", Client.class);
+        client.setClientId(18);
+        client.setLastName("sd34y");
+        client.setSecondName("sdfy45u");
+        client.setFirstName("dfuighsodiufg");
+        client.setGender("male");*/
+
         ClientRepository clientRepository = new ClientRepository();
-        clientRepository.delete(1);
+
+        System.out.println(clientRepository.getAll());
 
 
     }

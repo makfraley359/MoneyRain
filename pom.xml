@@ -7,6 +7,7 @@
     <groupId>com.github.makfraley359</groupId>
     <artifactId>moneyrain</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <packaging>jar</packaging>
     <name>Money Rain</name>
 
@@ -16,22 +17,36 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.23</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.3.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.6</version>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
