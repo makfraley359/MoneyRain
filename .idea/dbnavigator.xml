@@ -24,14 +24,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="ad0d7e04-83f4-4086-a144-f5af23494c42">
-        <schema name="mydbtest" object-types="table, view, procedure, function" />
-      </connection>
-      <connection connection-id="7cabbbfd-4945-4d11-9f97-ad18f7335699">
-        <schema name="mydbtest" object-types="table, view, procedure, function" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="ad0d7e04-83f4-4086-a144-f5af23494c42">
