@@ -1,24 +1,25 @@
 package spring;
 
-import models.Account;
-import models.Client;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import repository.AccountRepository;
+import repository.ClientRepository;
+import java.sql.SQLException;
 
 @Configuration
 @Component
 public class SpringConfig {
     @Bean
     @Scope("prototype")
-    public Client client() {
-        return new Client();
+    public ClientRepository clientRepository() throws SQLException {
+        return new ClientRepository();
     }
 
     @Bean
     @Scope("prototype")
-    public Account account() {
-        return new Account();
+    public AccountRepository accountRepository() throws SQLException {
+        return new AccountRepository();
     }
 }

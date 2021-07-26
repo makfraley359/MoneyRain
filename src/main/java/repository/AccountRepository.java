@@ -1,9 +1,6 @@
 package repository;
 
 import models.Account;
-import models.Client;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import spring.SpringConfig;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountRepository extends AbstractRepository<Account, Integer> {
-
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
     public AccountRepository() throws SQLException {
     }
@@ -25,7 +20,7 @@ public class AccountRepository extends AbstractRepository<Account, Integer> {
         PreparedStatement preparedStatement = getPrepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
-            Account account = context.getBean("account", Account.class);
+            Account account = new Account();
             account.setAccountId(resultSet.getInt("ACCOUNTID"));
             account.setNumber(resultSet.getInt("NUMBER"));
             account.setBalance(resultSet.getInt("BALANCE"));
@@ -38,7 +33,7 @@ public class AccountRepository extends AbstractRepository<Account, Integer> {
 
     public Account getEntityById(Integer id) throws SQLException {
         String sql = "SELECT ACCOUNTID, NUMBER, BALANCE, CLIENTID FROM ACCOUNT WHERE ACCOUNTID=?";
-        Account account = context.getBean("account", Account.class);
+        Account account = new Account();
         PreparedStatement preparedStatement = getPrepareStatement(sql);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();

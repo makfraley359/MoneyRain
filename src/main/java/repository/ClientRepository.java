@@ -1,16 +1,12 @@
 package repository;
 
 import models.Client;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import spring.SpringConfig;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClientRepository extends AbstractRepository<Client, Integer> {
-
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
     public ClientRepository() throws SQLException {
     }
@@ -22,7 +18,7 @@ public class ClientRepository extends AbstractRepository<Client, Integer> {
         PreparedStatement preparedStatement = getPrepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
-            Client client = context.getBean("client", Client.class);
+            Client client = new Client();
             client.setClientId(resultSet.getInt("CLIENTID"));
             client.setFirstName(resultSet.getString("FIRSTNAME"));
             client.setSecondName(resultSet.getString("SECONDNAME"));
@@ -36,7 +32,7 @@ public class ClientRepository extends AbstractRepository<Client, Integer> {
 
     public Client getEntityById(Integer id) throws SQLException {
         String sql = "SELECT CLIENTID, FIRSTNAME, SECONDNAME, LASTNAME, GENDER FROM CLIENT WHERE CLIENTID=?";
-        Client client = context.getBean("client", Client.class);
+        Client client = new Client();
         PreparedStatement preparedStatement = getPrepareStatement(sql);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();

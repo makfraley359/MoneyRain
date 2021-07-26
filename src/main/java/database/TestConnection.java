@@ -1,10 +1,6 @@
 package database;
 
-import models.Account;
-import models.Client;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import repository.AbstractRepository;
-import repository.AccountRepository;
 import repository.ClientRepository;
 import spring.SpringConfig;
 
@@ -38,20 +34,12 @@ public class TestConnection {
         }
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
+    public static void main(String[] args) throws SQLException {
 
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-/*        Client client = context.getBean("client", Client.class);
-        client.setClientId(18);
-        client.setLastName("sd34y");
-        client.setSecondName("sdfy45u");
-        client.setFirstName("dfuighsodiufg");
-        client.setGender("male");*/
-
-        ClientRepository clientRepository = new ClientRepository();
-
+        ClientRepository clientRepository = context.getBean("clientRepository", ClientRepository.class);
         System.out.println(clientRepository.getAll());
-
 
     }
 
